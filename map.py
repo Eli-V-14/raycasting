@@ -26,4 +26,4 @@ class Map:
                 if self.grid[i][j] == 0:
                     pygame.draw.rect(screen, (255, 255, 255), (tile_x, tile_y, TILESIZE - 1, TILESIZE) - 1)
                 elif self.grid[i][j] == 1:
-                    pygame.draw.rect(screen, (40, 40, 40), (tile_x, tile_y, TILESIZE, TILESIZE))
+                    pygame.draw.rect(screen, (40, 40, 40), (tile_x, tile_y, TILESIZE - 1, TILESIZE - 1))

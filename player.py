@@ -30,9 +30,16 @@ class Player:
             self.walkDirection = -1
 
         moveStep = self.walkDirection * self.moveSpeed
+
         self.rotationAngle += self.turnDirection * self.rotationSpeed
+
         self.x += math.cos(self.rotationAngle) * moveStep
         self.y += math.sin(self.rotationAngle) * moveStep
+
+        if self.rotationAngle < 0:
+            self.rotationAngle += 2 * math.pi
+        if self.rotationAngle > 2 * math.pi:
+            self.rotationAngle -= 2 * math.pi
 
     def render(self, screen):
         pygame.draw.circle(screen, (255, 0, 0), (self.x, self.y), self.radius)

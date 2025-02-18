@@ -12,7 +12,8 @@ map = Map()
 player = Player()
 
 clock = pygame.time.Clock()
-raycaster = Raycaster(player)
+raycaster = Raycaster(player, map)
+
 while RUN:
     clock.tick(60)
     for event in pygame.event.get():

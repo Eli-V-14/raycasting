@@ -9,7 +9,7 @@ screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 RUN = True
 
 map = Map()
-player = Player()
+player = Player(map)
 
 clock = pygame.time.Clock()
 raycaster = Raycaster(player, map)

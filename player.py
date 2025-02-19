@@ -1,9 +1,11 @@
 import pygame 
 import math
 from settings import *
+from map import *
 
 class Player:
-    def __init__(self):
+    def __init__(self, map):
+        self.map = map
         self.x = WINDOW_WIDTH / 2
         self.y = WINDOW_HEIGHT / 2
         self.radius = 3

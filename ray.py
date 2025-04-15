@@ -110,7 +110,6 @@ class Ray:
                 next_vertical_y += ya
         
         # Distance Calculation
-
         horizontal_distance = 0
         vertical_distance = 0
 

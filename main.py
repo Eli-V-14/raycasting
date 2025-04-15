@@ -14,7 +14,7 @@ player = Player(map)
 clock = pygame.time.Clock()
 raycaster = Raycaster(player, map)
 
-background_image = pygame.image.load("salt-lake2.jpg")
+background_image = pygame.image.load("backgrounds/salt-lake2.jpg")
 
 while RUN:
     clock.tick(60)
@@ -29,7 +29,6 @@ while RUN:
     screen.blit(background_image, (0, 0))
 
     # screen.fill((0,0,0))
-
     # map.render(screen)
     # player.render(screen)
 

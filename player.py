@@ -35,8 +35,15 @@ class Player:
 
         self.rotationAngle += self.turnDirection * self.rotationSpeed
 
-        self.x += math.cos(self.rotationAngle) * moveStep
-        self.y += math.sin(self.rotationAngle) * moveStep
+        xv = math.cos(self.rotationAngle) * moveStep
+        yv = math.sin(self.rotationAngle) * moveStep
+
+        new_x = self.x + xv
+        new_y = self.y + yv
+
+        if not self.map.has_wall_at(new_x, new_y):
+            self.x = new_x
+            self.y = new_y
 
         if self.rotationAngle < 0:
             self.rotationAngle += 2 * math.pi
@@ -45,5 +52,4 @@ class Player:
 
     def render(self, screen):
         pygame.draw.circle(screen, (255, 0, 0), (self.x, self.y), self.radius)
-
         pygame.draw.line(screen, (255, 0, 0), (self.x, self.y), (self.x + math.cos(self.rotationAngle) * 50, self.y + math.sin(self.rotationAngle) * 50))
